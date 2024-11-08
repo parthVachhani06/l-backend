@@ -34,7 +34,7 @@ app.use(
 // );
 
 app.use(errorHandler);
-connectDB();
+// connectDB();
 
 server.listen(config.port, () => {
   console.log("server listing the port " + config.port);
