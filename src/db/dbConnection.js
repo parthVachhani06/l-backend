@@ -4,10 +4,7 @@ const config = require('../config/config');  // Ensure the config contains the c
 const connectDB = async () => {
   try {
     console.log("Connecting to MongoDB with URL: " + config.mongodb.url); // For debugging
-    await mongoose.connect(config.mongodb.url, {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
-    });
+    await mongoose.connect(config.mongodb.url, config.mongodb.options);
     console.log('MongoDB connected successfully');
   } catch (error) {
     console.error('Database connection error: ', error);
