@@ -1,7 +1,7 @@
 const http = require("http");
 const express = require("express");
 const bodyParser = require("body-parser");
-const { connectDB } = require("./src/db/dbconnection");
+const { connectDB } = require("./src/db/dbConnection");
 const config = require("./src/config/config");
 const cors = require("cors");
 const routes = require("./src/routes/v1");
@@ -12,7 +12,7 @@ const app = express();
 
 const server = http.createServer(app);
 
-
+connectDB();
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
